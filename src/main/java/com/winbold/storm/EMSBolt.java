@@ -1,9 +1,6 @@
 package com.winbold.storm;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
 import java.util.Map;
 
 import com.winbold.storm.util.Constants;
@@ -39,6 +36,7 @@ public class EMSBolt extends BaseRichBolt
         try{
         	String finaldata = tuple.getSourceComponent();
         	System.out.println(tuple.getValue(0).toString());
+          System.out.println("-------------------------");
         	//add the recent temperature into a temp variable
         	if(tuple.getSourceComponent().equals(Constants.TEMPERATURE_MONITOR)){
         		recentTemperatureMonitorData = tuple.getInteger(0);
